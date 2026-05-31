@@ -1,71 +1,71 @@
-# 附录：80%问题——深入分析
+# Appendix: The 80% Problem — In-Depth Analysis
 
-## 这不是AI的问题。这是协作的结构性问题。
+## This is not an AI problem. This is a structural problem of collaboration.
 
-"80%问题"是本仓库最常被引用的发现。这个附录深入分析它为什么发生、为什么不会自己消失、以及你应该如何与它共存。
+The "80% Problem" is the most frequently cited finding in this repository. This appendix provides an in-depth analysis of why it happens, why it won't go away on its own, and how you should coexist with it.
 
-## 什么是80%问题
+## What Is the 80% Problem
 
-AI在每个任务上都能稳定产出80分的成果——但几乎永远到不了90分。
+AI consistently produces 80-point results on every task — but almost never reaches 90.
 
-**不是"AI偶尔到80%"。是"AI几乎必然停在80%"。**
+**It's not "AI occasionally hits 80%." It's "AI almost inevitably stops at 80%."**
 
-这不是某个具体模型的问题。GPT-3.5、GPT-4、Claude Sonnet、GLM——我们测试过的所有模型都呈现这个模式。模型越强，80分的"绝对值"越高（GPT-4的80分可能等于GPT-3.5的95分），但**80%的相对位置不变**。
+This is not a problem with any specific model. GPT-3.5, GPT-4, Claude Sonnet, GLM — every model we tested exhibits this pattern. The stronger the model, the higher the absolute value of its "80 points" (GPT-4's 80 might equal GPT-3.5's 95), but **the relative position of 80% remains unchanged.**
 
-## 为什么是80%而不是别的数字
+## Why 80% and Not Some Other Number
 
-不是精确的80%。是"**AI能处理常见情况，但不能处理罕见但关键的情况**"。
+It's not a precise 80%. It's "**AI can handle common cases, but cannot handle rare but critical cases.**"
 
-具体到我们的数据：
+Specific to our data:
 
-| 任务类型 | AI能做到的 | AI做不到的 |
-|---------|-----------|-----------|
-| 文章写作 | 流畅的结构、合理的论证、准确的术语使用 | 独特的观点、个人化的声音、知道自己什么时候该停 |
-| 代码生成 | 正确的算法实现、完整的API文档、标准的错误处理 | 理解业务逻辑的隐含假设、预测用户会怎么用错、知道哪些边界case重要 |
-| 理论构建 | 概念分类、术语定义、逻辑推理链 | 判断哪个概念是核心、知道什么时候该推翻旧框架、保持跨文档的一致性 |
-| 设计决策 | 列出选项的优缺点、引用最佳实践 | 做权衡、为"不完美但够用"的方案负责、在信息不全时做出判断 |
+| Task Type | What AI Can Do | What AI Cannot Do |
+|-----------|---------------|-------------------|
+| Article writing | Fluent structure, sound reasoning, accurate terminology | Unique perspective, personal voice, knowing when to stop |
+| Code generation | Correct algorithm implementation, complete API documentation, standard error handling | Understanding implicit business logic assumptions, predicting how users will misuse things, knowing which edge cases matter |
+| Theory building | Concept classification, terminology definition, logical reasoning chains | Judging which concept is core, knowing when to overturn an old framework, maintaining consistency across documents |
+| Design decisions | Listing pros and cons of options, citing best practices | Making trade-offs, taking responsibility for "imperfect but good enough" solutions, making judgments with incomplete information |
 
-**规律：AI能做的是"给定明确规则和充足信息的情况下，得出正确结论"。AI不能做的是"在信息不全、规则模糊、需要价值判断的情况下，做出负责任的决策"。**
+**The pattern: what AI can do is "reach correct conclusions given clear rules and sufficient information." What AI cannot do is "make responsible decisions when information is incomplete, rules are fuzzy, and value judgments are required."**
 
-## 为什么80%问题不会自己消失
+## Why the 80% Problem Won't Go Away on Its Own
 
-三个结构性原因：
+Three structural reasons:
 
-### 1. AI的训练数据是"平均"的
+### 1. AI's training data is "average"
 
-AI的训练数据来自互联网——一个巨大的"平均"。它在"大多数人会怎么做"上表现最好。但当你的需求是"这个特定的人/产品/场景需要什么"时，AI没有这个特定的训练数据。
+AI's training data comes from the internet — a vast "average." It performs best on "what most people would do." But when your need is "what does this specific person / product / scenario require," AI doesn't have that specific training data.
 
-**你的独特性就是AI的盲区。**
+**Your uniqueness is AI's blind spot.**
 
-### 2. AI没有"责任感"
+### 2. AI has no "sense of responsibility"
 
-当你说"这篇文章是我的观点，我要为它负责"——AI不理解这是什么意思。它不会因为你明天要面对读者的质疑而更谨慎。它不会因为"如果这个结论错了，我建立的知识体系会崩"而重新审视自己的推理。
+When you say "this article represents my viewpoint, and I take responsibility for it" — AI doesn't understand what that means. It won't be more cautious because you'll face reader scrutiny tomorrow. It won't re-examine its reasoning because "if this conclusion is wrong, the knowledge system I've built will collapse."
 
-**AI可以模拟谨慎，但不能真正地感到谨慎。**
+**AI can simulate caution, but it cannot genuinely feel caution.**
 
-### 3. 上下文窗口是有限的
+### 3. The context window is finite
 
-即使最好的模型，真正有效的上下文也不超过几十页。当你的项目超过这个规模——当你需要在3000篇理论文档之间保持一致性——AI不够用不是因为"智商"，是因为它无法同时持有所有信息。
+Even the best models have an effective context of no more than a few dozen pages. When your project exceeds this scale — when you need to maintain consistency across 3,000 theoretical documents — AI falls short not because of "intelligence," but because it cannot simultaneously hold all the information.
 
-**复杂系统的边界永远在AI的上下文窗口之外。**
+**The boundaries of complex systems always lie beyond AI's context window.**
 
-## 与80%共存：不是克服，是管理
+## Coexisting with 80%: Not Overcoming, But Managing
 
-目标不是"让AI做到90%"。目标是"设计一个系统，让AI的80% + 人的20% = 接近100%"。
+The goal is not "getting AI to reach 90%." The goal is "designing a system where AI's 80% + human's 20% = close to 100%."
 
-| 策略 | 做法 | 效果 |
-|------|------|------|
-| 多Agent分拆 | 把任务拆到每个Agent只需要处理20%上下文 | AI的80分变"硬"了（更稳定） |
-| 人工断点 | 在AI输出后、下一步之前插入人工检查 | 捕捉AI的"完美假象" |
-| 认知主权检查 | 每月审视AI辅助产出的核心观点 | 防止"不知道这是谁的想法" |
-| 边界校准 | 每季度重新谈判人机分工 | 在AI能力变化时调整策略 |
+| Strategy | Approach | Effect |
+|----------|----------|--------|
+| Multi-Agent decomposition | Break tasks down so each Agent only needs to process 20% of the context | AI's 80 points become "harder" (more stable) |
+| Human breakpoints | Insert human checks between AI output and the next step | Catch AI's "perfect illusion" |
+| Cognitive sovereignty check | Monthly review of core viewpoints in AI-assisted output | Prevent "not knowing whose idea this is" |
+| Boundary calibration | Quarterly renegotiation of human-machine division of labor | Adjust strategy as AI capabilities change |
 
-**核心洞察：80%不是要解决的问题。80%是要管理的现实。**
+**Core insight: 80% is not a problem to be solved. 80% is a reality to be managed.**
 
-就像你不会抱怨"为什么汽车只能到120迈不能到500迈"。你会设计一个系统——高速公路、加油站、休息区——让汽车在120迈的限制下最大化效用。
+It's like you wouldn't complain "why can a car only go 120 mph and not 500 mph." You'd design a system — highways, gas stations, rest areas — to maximize the car's utility within the 120 mph constraint.
 
-**AI不是喷气机。AI是汽车。你要做的不是等喷气机。是修路。**
+**AI is not a jet. AI is a car. What you need to do is not wait for a jet. It's build the roads.**
 
 ---
 
-[← 返回地图](../README.md)
+[← Back to Map](../README.md)

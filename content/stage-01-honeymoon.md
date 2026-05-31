@@ -1,86 +1,86 @@
-# 🍯 阶段一：蜜月期
+# 🍯 Stage 1: The Honeymoon Period
 
-> **"它什么都能写。我每天都在发现新大陆。"**
+> **"It can write anything. Every day I'm discovering a new continent."**
 
-**时间窗口：** 1-3个月
+**Time Window:** 1-3 months
 
-**一句话定义：** 产出速度暴增，但你还没有能力判断产出的质量。你分不清"AI写得好"和"我做得好"。
-
----
-
-## 📊 数据
-
-从我们的10000+篇文档中回溯：
-
-- 前3个月，AI辅助产出占总量的 **90%+**
-- 但3个月后回看这些内容，能直接使用（无需重大改写）的不到 **40%**
-- 典型模式：兴奋地生成大量内容 → 第二天醒来发现逻辑断裂 → 但不愿承认"AI写得不好" → 归咎于prompt不够好 → 花大量时间调prompt → 越调越不像自己
+**One-line definition:** Your output speed explodes, but you haven't yet developed the ability to judge the quality of that output. You can't tell the difference between "the AI wrote well" and "I did well."
 
 ---
 
-## 🔴 三个困境
+## 📊 Data
 
-### 困境一：产出暴增，但你开始分不清哪些是你真正认同的
+Looking back across our 10,000+ documents:
 
-AI能在一小时内产出你过去一周的内容量。第一反应是狂喜。但很快你会发现一个诡异的问题：你翻看前几天生成的东西，有些读起来很流畅、很有道理——但你不确定这是你的想法，还是AI替你编的。
-
-**这不是质量问题。这是认知主权问题。**
-
-### 困境二：AI替你写了你本应该自己思考的东西
-
-写作不只是产出文字。写作是思考过程的外化。当你把"想清楚一件事"外包给AI，你失去了那个"写着写着就明白了"的认知过程。你获得了文字，失去了理解。
-
-### 困境三：你在调prompt上花的时间，超过了你过去写作的时间
-
-"如果prompt再好一点，AI就能写出我想要的东西。"——这个信念驱动你不断调整提示词。但你会发现一个规律：prompt调得越精细，输出越不像你自己。因为你在用你的语言描述你的想法让AI模仿——这比直接写更累。
+- In the first 3 months, AI-assisted output accounted for **90%+** of total volume
+- But revisiting this content 3 months later, less than **40%** was directly usable (without major rewriting)
+- Typical pattern: excitedly generate massive content → wake up the next day and discover logical gaps → unwilling to admit "the AI wrote poorly" → blame the prompt → spend huge amounts of time tweaking prompts → the more you tweak, the less it sounds like you
 
 ---
 
-## 🟢 三个突破
+## 🔴 Three Predicaments
 
-### 突破一：第一次发现"AI写得好 ≠ AI理解你"
+### Predicament 1: Output explodes, but you start losing track of what you actually believe
 
-流畅的废话依然是废话。AI擅长生成"读起来像那么回事"的内容，但它不理解你为什么在意某个观点、为什么某个例子对你有意义、为什么你会选择这个角度而不是那个角度。
+AI can produce in one hour the volume of content that used to take you a week. Your first reaction is euphoria. But soon you notice something uncanny: you flip through what was generated a few days ago, and some of it reads smoothly and makes sense — but you're not sure whether these are your ideas or something the AI fabricated on your behalf.
 
-**怎么做到的：** 回看自己三个月前最喜欢的一篇AI生成内容。如果你现在觉得它空洞，你就完成了这个突破。
+**This is not a quality issue. This is a cognitive sovereignty issue.**
 
-### 突破二：开始建立"提示词版本化"
+### Predicament 2: AI writes the things you should have thought through yourself
 
-不再把prompt当成一次性的指令，而是当成代码——版本化、测试化、可复用。我们的人设文件体系（三个知乎IP各有独立的人设markdown）就是这个突破的产物。
+Writing is not just producing words. Writing is the externalization of the thinking process. When you outsource "figuring something out" to AI, you lose the cognitive process of "understanding as you write." You gain words. You lose understanding.
 
-**怎么做到的：** 把你最常用的prompt存成独立文件。每次改动记录原因。两周后回看哪些改动是有效的。
+### Predicament 3: You spend more time tweaking prompts than you used to spend writing
 
-### 突破三：学会区分"AI擅长的"和"AI不擅长的"
-
-- AI擅长：堆量、找模式、生成变体、结构化输出
-- AI不擅长：做决定、定方向、判断重要性、保持一致性、知道什么时候停
-
-这个区分看起来简单，但真正内化需要大量失败。你会在"让AI做决定"上反复摔跤，直到你承认：**AI可以帮你思考，但不能替你思考。**
+"If the prompt were just a little better, the AI would write exactly what I want." — This belief drives you to endlessly adjust your prompts. But you'll discover a pattern: the more finely tuned the prompt, the less the output sounds like you. Because you're using your own words to describe your ideas for the AI to imitate — and that's more exhausting than just writing it yourself.
 
 ---
 
-## ⚠️ 最大陷阱
+## 🟢 Three Breakthroughs
 
-> **把"AI写得快"当成"我做得好"。**
+### Breakthrough 1: The first time you realize "AI writes well ≠ AI understands you"
 
-蜜月期的核心幻觉：以为自己的产出能力突然翻倍了。实际上，你只是获得了一个输出速度极快的协作者——但你的判断力、品味、方向感，完全没有变快。
+Fluent nonsense is still nonsense. AI excels at generating content that "reads like the real thing," but it doesn't understand why you care about a particular viewpoint, why a certain example matters to you, why you choose this angle over that one.
 
-如果你在这个阶段开始对外承诺（"我能日更"、"我能周更三篇深度文章"），这些承诺会变成后续阶段的噩梦。
+**How to get there:** Revisit your favorite AI-generated piece from three months ago. If it feels hollow to you now, you've achieved this breakthrough.
 
-**如何避免：** 定期做"纯人工产出日"——不用AI，自己写一整天。这会校准你对自己真实能力的感知。
+### Breakthrough 2: You start establishing "prompt versioning"
+
+You stop treating prompts as one-off instructions and start treating them as code — versioned, tested, reusable. Our persona file system (three separate Zhihu IPs, each with their own persona markdown) is a product of this breakthrough.
+
+**How to get there:** Save your most frequently used prompts as standalone files. Record why you made each change. Review two weeks later to see which changes actually helped.
+
+### Breakthrough 3: You learn to distinguish "what AI is good at" from "what AI is bad at"
+
+- AI is good at: producing volume, finding patterns, generating variants, structured output
+- AI is bad at: making decisions, setting direction, judging importance, maintaining consistency, knowing when to stop
+
+This distinction looks simple, but truly internalizing it takes a lot of failure. You'll trip over "letting AI make decisions" again and again, until you finally accept: **AI can help you think, but it cannot think for you.**
 
 ---
 
-## 🔗 进入下一阶段的信号
+## ⚠️ The Biggest Trap
 
-你第一次对AI的输出说：
+> **Mistaking "the AI writes fast" for "I'm doing well."**
 
-> "方向错了。推翻重来。"
+The core illusion of the honeymoon period: believing your output capacity has suddenly doubled. In reality, you've merely gained a collaborator with extremely fast output speed — but your judgment, taste, and sense of direction have not accelerated at all.
 
-而且你能说出**为什么错**——不只是"写得不好"，而是"这里的论证方向和我实际想表达的是相反的"、"这个结论不是我的结论"。
+If you start making external commitments during this stage ("I can post daily," "I can publish three in-depth articles a week"), those commitments will become a nightmare in the stages that follow.
 
-当你能明确地指出AI输出的问题而不仅是模糊的不满，你就进入了幻觉期。
+**How to avoid it:** Regularly schedule a "pure human output day" — no AI, write entirely on your own for a full day. This will recalibrate your perception of your actual capability.
 
 ---
 
-[← 返回地图](../README.md) | [下一阶段：幻觉期 →](stage-02-illusion.md)
+## 🔗 Signal That You're Entering the Next Stage
+
+The first time you say to the AI's output:
+
+> "Wrong direction. Scrap it. Start over."
+
+And you can articulate **why it's wrong** — not just "it's poorly written," but "the argument's direction here is the opposite of what I actually want to express," or "this conclusion is not my conclusion."
+
+When you can clearly identify the problems in AI output rather than just feeling vaguely dissatisfied, you've entered the Illusion Period.
+
+---
+
+[← Back to Map](../README.md) | [Next Stage: The Illusion Period →](stage-02-illusion.md)

@@ -1,100 +1,100 @@
-# 🌫 阶段二：幻觉期
+# 🌫 Stage 2: The Illusion Period
 
-> **"每个项目AI都能推到八成。但最后两成是一个深不见底的坑。"**
+> **"AI can push every project to 80%. But the last 20% is a bottomless pit."**
 
-**时间窗口：** 3-12个月
+**Time Window:** 3-12 months
 
-**一句话定义：** 你确认了80%天花板的存在。你知道AI不够好，但你不知道问题出在自己身上还是AI身上。
-
----
-
-## 📊 数据
-
-- 10000+篇文档中，约 **6200篇** 经过至少一轮人工改写
-- 24个软件产品中，**前6个** 因为过度信任AI生成的架构而发生了大规模返工
-- 典型模式：AI产出 → 看起来完美 → 部署/上线 → 发现边界case → 人工补丁 → 越补越多 → 架构崩溃
-- 平均"从AI产出到发现致命缺陷"的时间窗口：**2-4周**
+**One-line definition:** You've confirmed the existence of the 80% ceiling. You know AI isn't good enough, but you don't know whether the problem lies with you or with the AI.
 
 ---
 
-## 🔴 三个困境
+## 📊 Data
 
-### 困境一：80%问题
-
-AI在每个维度上都是80分——不快不慢、不深不浅、永远到不了90。代码能跑但有隐藏bug，文章读得通但少了一口气，产品能用但说不清哪里别扭。
-
-最折磨人的是：80分是一个**尴尬的分数**——不是差到可以扔掉，也不是好到可以用。你花在"把80提到90"上的时间，往往比重写还多。
-
-### 困境二：完美假象
-
-AI输出读起来流畅，让你误以为逻辑也流畅。直到：
-- 用户报告了一个你从未想过的使用场景
-- AI写的代码在边界条件下静默失败
-- 你试图修改AI产出的某一部分，发现它和其他部分有隐藏的耦合
-
-**流畅的文本会欺骗你的判断力。** 你的大脑会自动补全AI没写清楚的逻辑——直到现实打脸。
-
-### 困境三：责任真空
-
-AI写的东西出了问题，谁来负责？你改不了AI写的代码——它的逻辑路径和你的完全不同。但客户找的是你，不是AI。
-
-这个困境没有技术解。它是一个哲学问题：**当产出不是你独自完成的，你怎么对产出负责？**
+- Of 10,000+ documents, approximately **6,200** underwent at least one round of human rewriting
+- Of 24 software products, the **first 6** suffered massive rework due to over-trusting AI-generated architecture
+- Typical pattern: AI output → looks perfect → deploy/launch → discover edge cases → human patches → more patches �� architecture collapse
+- Average time window from "AI output" to "discovering the fatal flaw": **2-4 weeks**
 
 ---
 
-## 🟢 三个突破
+## 🔴 Three Predicaments
 
-### 突破一：确定性代码必须包裹AI代码
+### Predicament 1: The 80% Problem
 
-不是"让AI写一切"，是"用代码管AI"。
+AI scores 80 in every dimension — not fast, not slow; not deep, not shallow; never reaching 90. Code runs but has hidden bugs, articles read smoothly but lack that final spark, products work but something feels off and you can't name it.
 
-关键转变：AI写的代码是**被调用方**，不是**控制方**。控制流（DAG/状态机/检查链）必须由确定性代码管理。AI只在一个明确的、可验证的节点内执行。
+The most tormenting part: 80 is an **awkward score** — not bad enough to throw away, not good enough to use. The time you spend "bringing 80 up to 90" often exceeds the time it would take to rewrite from scratch.
 
-**怎么做到的：** 把你接下来要做的项目拆成步骤列表。在每一步后面加一个"谁来检查这一步的结果"。你会发现，检查的人必须是你。
+### Predicament 2: The Perfect Illusion
 
-### 突破二：建立"人工审查点"的硬规则
+AI output reads fluently, making you believe the logic is also fluent. Until:
+- A user reports a usage scenario you never imagined
+- AI-written code fails silently under edge conditions
+- You try to modify one part of the AI's output and discover hidden coupling with other parts
 
-不是信任问题。是结构问题。
+**Fluent text deceives your judgment.** Your brain automatically fills in the logic the AI didn't articulate — until reality slaps you in the face.
 
-规则示例：
-- 任何对外发布的内容，发之前人工通读一遍——不是扫一眼，是逐字读
-- 任何部署到生产环境的代码，在AI产出和部署之间至少有一个人工diff检查
-- 任何"AI原创"的理论概念，48小时冷静期后才能进入正式文档
+### Predicament 3: The Responsibility Vacuum
 
-**怎么做到的：** 先定一条规则。严格执行30天。你会在这30天里发现AI产出的隐藏问题——这些发现会成为你坚持规则的理由。
+When something the AI wrote goes wrong, who takes responsibility? You can't fix the AI's code — its logic paths are completely different from yours. But the client comes to you, not the AI.
 
-### 突破三：把任务分给多个小Agent，而不是给一个大Agent
-
-这是我们在幻觉期最关键的工程发现。
-
-单Agent的问题：它会在不同的子任务之间"偷换上下文"。前一步的输出影响后一步的输入，错误逐级放大。
-
-多Agent方案：每个Agent只做一件事——一个写、一个审、一个排版、一个检查事实。Agent之间的接口是**结构化数据**，不是自由文本。
-
-**数据：** 从单Agent切换到多Agent后，内容发布的错误率下降了约70%。不是因为Agent变聪明了，是因为每个Agent的上下文窗口更小、更聚焦。
+This predicament has no technical solution. It's a philosophical question: **when the output isn't something you produced alone, how do you take responsibility for it?**
 
 ---
 
-## ⚠️ 最大陷阱
+## 🟢 Three Breakthroughs
 
-> **在这个阶段放弃。**
+### Breakthrough 1: Deterministic code must wrap AI code
 
-幻觉期是最危险的阶段。很多人在这里得出结论："AI根本不行"——然后回到全人工，错过了协作期真正发生的事情。
+It's not "let AI write everything." It's "use code to manage AI."
 
-放弃的原因通常不是AI不够好——是**你没有建立正确的人机边界**。你还在试图让AI做它不擅长的事情（做决定、定方向），然后因为它的失败而否定它的全部价值。
+The key shift: AI-written code is the **callee**, not the **controller**. The control flow (DAG / state machine / check chain) must be managed by deterministic code. AI only executes within a clearly defined, verifiable node.
 
-**如何避免：** 当你觉得自己想放弃AI的时候，先回答一个问题：你是在让AI做执行，还是在让AI做决策？如果是后者，问题不在AI。
+**How to get there:** Break down your next project into a list of steps. After each step, add "who checks the result of this step." You'll find that the checker must be you.
+
+### Breakthrough 2: Establish hard rules for "human review checkpoints"
+
+This is not a trust issue. This is a structural issue.
+
+Example rules:
+- Anything released externally must be read through by a human before publishing — not a glance, but word by word
+- Any code deployed to production must have at least one human diff check between AI output and deployment
+- Any "AI-original" theoretical concept must go through a 48-hour cooling-off period before entering formal documentation
+
+**How to get there:** Set one rule first. Enforce it strictly for 30 days. Over those 30 days, you'll discover hidden problems in AI output — and those discoveries will become your reason to keep the rule.
+
+### Breakthrough 3: Distribute tasks across multiple small Agents instead of one big Agent
+
+This was our most critical engineering discovery during the Illusion Period.
+
+The single-Agent problem: it "smuggles context" between different subtasks. The output of one step influences the input of the next, and errors amplify step by step.
+
+The multi-Agent approach: each Agent does exactly one thing — one writes, one reviews, one formats, one fact-checks. The interface between Agents is **structured data**, not free text.
+
+**Data:** After switching from single-Agent to multi-Agent, content publishing error rates dropped by approximately 70%. Not because the Agents got smarter, but because each Agent's context window is smaller and more focused.
 
 ---
 
-## 🔗 进入下一阶段的信号
+## ⚠️ The Biggest Trap
 
-你不再问"AI能不能做这件事"。
+> **Giving up at this stage.**
 
-你开始问"这件事的哪个部分应该交给AI，哪个部分必须我做"。
+The Illusion Period is the most dangerous stage. Many people conclude here: "AI simply doesn't work" — then return to fully manual work, missing what actually happens in the Collaboration Period.
 
-当你从讨论"AI的能力边界"转向设计"人机分工的规则"，你就进入了边界期。
+The reason for giving up is usually not that AI isn't good enough — it's that **you haven't established the right human-machine boundary**. You're still trying to make AI do what it's bad at (making decisions, setting direction), and then negating all its value because of its failures.
+
+**How to avoid it:** When you feel like giving up on AI, first answer one question: are you asking AI to execute, or are you asking AI to decide? If it's the latter, the problem isn't with the AI.
 
 ---
 
-[← 上一阶段：蜜月期](stage-01-honeymoon.md) | [← 返回地图](../README.md) | [下一阶段：边界期 →](stage-03-boundaries.md)
+## 🔗 Signal That You're Entering the Next Stage
+
+You stop asking "can AI do this?"
+
+You start asking "which part of this should be handed to AI, and which part must I do?"
+
+When you shift from discussing "the boundaries of AI's capability" to designing "the rules of human-machine division of labor," you've entered the Boundaries Period.
+
+---
+
+[← Previous Stage: The Honeymoon Period](stage-01-honeymoon.md) | [← Back to Map](../README.md) | [Next Stage: The Boundaries Period →](stage-03-boundaries.md)

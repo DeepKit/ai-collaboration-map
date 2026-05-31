@@ -1,121 +1,124 @@
-# 附录：多Agent架构
+# Appendix: Multi-Agent Architecture
 
-## 为什么多Agent比单Agent可靠
+## Why Multi-Agent Is More Reliable Than Single-Agent
 
-这是我们在幻觉期最重要的工程发现，也是进入边界期的关键转折。
+This was our most important engineering discovery during the Illusion Period, and the key turning point for entering the Boundaries Period.
 
-## 单Agent的问题
+## The Single-Agent Problem
 
-单Agent做复杂任务的典型失败模式：
-
-```
-用户指令："写一篇知乎问答，发到付乙账号"
-         ↓
-    [单Agent执行]
-         ↓
-    1. 选题 → 选了3个
-    2. 写作 → 写了初稿
-    3. 审查 → "看起来没问题"
-    4. 发布 → 发了
-         ↓
-    结果：文章把"和悦论"写成了"五行和悦论"（已弃用术语）
-         因为Agent在第2步写作时参考了自己的记忆，
-         而记忆里没更新术语变更。
-```
-
-问题不是Agent不聪明。是**上下文窗口太长，Agent无法在所有步骤之间保持一致**。前一步的输出影响后一步的输入，错误逐级放大。
-
-## 多Agent方案
+The typical failure mode of a single Agent handling complex tasks:
 
 ```
-用户指令："写一篇知乎问答，发到付乙账号"
+User instruction: "Write a Zhihu Q&A post and publish it to the Fu Yi account"
          ↓
-    [调度Agent] → 拆成5个任务，分配给不同Agent
+    [Single Agent execution]
          ↓
-    1. [选题Agent] → 匹配选题 → 输出：{问题ID, 角度}
-         ↓ 人工检查：选题合适吗？
-    2. [写作Agent] → 撰写初稿 → 输出：{标题, 正文}
-         ↓ 人工检查：术语对了吗？人设吻合吗？
-    3. [审稿Agent] → 逐条检查 → 输出：{问题列表}
-         ↓ 人工确认：这些问题都需要修吗？
-    4. [修改Agent] → 按问题逐条修 → 输出：{终稿}
-         ↓ 人工通读
-    5. [发布Agent] → 发布 → 输出：{发布链接, 状态}
+    1. Topic selection → picked 3
+    2. Writing → wrote a draft
+    3. Review → "looks fine"
+    4. Publishing → published
+         ↓
+    Result: the article wrote "He Yue Theory" as "Five Elements He Yue Theory" (a deprecated term)
+         Because the Agent referenced its own memory during step 2 (writing),
+         and the memory hadn't been updated with the terminology change.
 ```
 
-## 关键原则
+The problem is not that the Agent isn't smart. It's that **the context window is too long, and the Agent cannot maintain consistency across all steps.** The output of one step influences the input of the next, and errors amplify step by step.
 
-### 1. Agent之间用结构化数据通信
+## The Multi-Agent Approach
 
-Agent A的输出 → 不是自由文本 → 是JSON
+```
+User instruction: "Write a Zhihu Q&A post and publish it to the Fu Yi account"
+         ↓
+    [Dispatch Agent] → breaks into 5 tasks, assigns to different Agents
+         ↓
+    1. [Topic Agent] → match topic → output: {question ID, angle}
+         ↓ Human check: is the topic appropriate?
+    2. [Writing Agent] → write draft → output: {title, body}
+         ↓ Human check: terminology correct? persona aligned?
+    3. [Review Agent] → check item by item → output: {issue list}
+         ↓ Human confirmation: do all these issues need fixing?
+    4. [Revision Agent] → fix issues one by one → output: {final draft}
+         ↓ Human read-through
+    5. [Publishing Agent] → publish → output: {publish link, status}
+```
+
+## Key Principles
+
+### 1. Agents communicate via structured data
+
+Agent A's output → not free text → it's JSON
 
 ```json
 {
-  "task": "选题匹配",
+  "task": "topic matching",
   "selected": {
     "question_id": "12345",
-    "angle": "从偏移理论解释职场责任分布",
+    "angle": "Explaining workplace responsibility distribution through deviation theory",
     "confidence": 0.85
   },
   "alternatives": [...]
 }
 ```
 
-**原因：** 自由文本会导致"语义漂移"——Agent B误解Agent A的意图。
+**Reason:** Free text leads to "semantic drift" — Agent B misinterprets Agent A's intent.
 
-### 2. 每个Agent的上下文窗口只包含它需要的东西
+### 2. Each Agent's context window contains only what it needs
 
-- 选题Agent：收到 人设文件 + 选题库（不收到写作指南）
-- 写作Agent：收到 人设文件 + 选定选题 + 写作指南（不收到审稿标准）
-- 审稿Agent：收到 写作终稿 + 审稿清单（不收到人设文件）
+- Topic Agent: receives persona file + topic pool (does not receive writing guide)
+- Writing Agent: receives persona file + selected topic + writing guide (does not receive review standards)
+- Review Agent: receives final writing draft + review checklist (does not receive persona file)
 
-**原因：** 上下文越小，Agent越聚焦。这也自然实现了我们的人设文件体系——每个文件只为特定Agent设计。
+**Reason:** The smaller the context, the more focused the Agent. This also naturally implements our persona file system — each file is designed for a specific Agent only.
 
-### 3. Agent之间必须有"人工断点"
+### 3. There must be "human breakpoints" between Agents
 
-每个Agent输出后 → 人看一眼 → 确认 → 下一个Agent。
+After each Agent's output → human glances → confirms → next Agent.
 
-**这不是效率问题。这是质量控制。** 人工断点不需要花很多时间（日常发布每条断点1-2分钟），但能捕捉到Agent之间传递的语义错误。
+**This is not an efficiency issue. This is quality control.** Human breakpoints don't require much time (1-2 minutes per breakpoint for daily publishing), but they catch semantic errors passed between Agents.
 
-## 架构图
+## Architecture Diagram
 
 ```
                     ┌─────────────────┐
-                    │   调度Agent      │
-                    │  (人+LLM协同)    │
-                    │ 拆任务 / 定优先级  │
+                    │  Dispatch Agent  │
+                    │ (human + LLM)    │
+                    │ task breakdown / │
+                    │ prioritization   │
                     └───────┬─────────┘
                             │
             ┌───────────────┼───────────────┐
             │               │               │
             ▼               ▼               ▼
     ┌──────────┐    ┌──────────┐    ┌──────────┐
-    │ 写作Agent │    │ 审稿Agent │    │ 发布Agent │
-    │ (付乙IP)  │    │ (通用)    │    │ (平台适配) │
+    │ Writing  │    │ Review   │    │Publishing│
+    │ Agent    │    │ Agent    │    │ Agent    │
+    │(Fu Yi IP)│    │(generic) │    │(platform │
+    │          │    │          │    │ adapter) │
     └─────┬────┘    └─────┬────┘    └─────┬────┘
           │               │               │
           │    ┌──────────┘               │
           │    │                          │
           ▼    ▼                          ▼
-      [人工断点]                    [人工断点]
-      (选题确认)                    (发布前通读)
+      [Human BP]                    [Human BP]
+      (topic confirm)              (pre-publish read)
 ```
 
-## 当你应该考虑多Agent
+## When You Should Consider Multi-Agent
 
-- ✅ 你的任务涉及3个以上独立步骤
-- ✅ 你在不同步骤之间发现了"上下文漂移"（前一步的输出被后一步误解）
-- ✅ 你需要不同的"人格"或"专业标准"来处理不同步骤
-- ❌ 任务只有1-2步，Agent的上下文窗口完全够用
+- ✅ Your task involves 3 or more independent steps
+- ✅ You've discovered "context drift" between different steps (the output of one step is misinterpreted by the next)
+- ✅ You need different "personas" or "professional standards" to handle different steps
+- ❌ The task has only 1-2 steps, and the Agent's context window is fully sufficient
 
-## 多Agent的代价
+## The Cost of Multi-Agent
 
-- 设置成本高：每个Agent需要自己的提示词文件
-- 人工断点意味着人必须在线——多Agent架构需要人的存在
-- Agent之间的数据格式需要统一，否则积木搭不起来
+- High setup cost: each Agent needs its own prompt file
+- Human breakpoints mean the human must be online — multi-Agent architecture requires human presence
+- Data formats between Agents must be unified, otherwise the building blocks won't fit together
 
-**如果需要"全自动"，多Agent架构不适合你。如果需要"高质量+人可控"，多Agent是目前的唯一解。**
+**If you need "fully automated," multi-Agent architecture is not for you. If you need "high quality + human control," multi-Agent is currently the only solution.**
 
 ---
 
-[← 返回地图](../README.md)
+[← Back to Map](../README.md)

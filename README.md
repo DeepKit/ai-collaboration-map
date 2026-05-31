@@ -1,131 +1,135 @@
-# AI 协作地图
+# AI Collaboration Map
 
-## 人机协作的四个阶段
+## The Four Stages of Human-AI Collaboration
 
-> 一份基于 3年 · 10000+篇文档 · 24个软件产品 · 12部文学作品 的认知地图
-
----
-
-**AI能写任何东西。但它不能替你决定什么值得写。这个区别，花了三年才看清。**
+> A cognitive map based on 3 years · 10,000+ documents · 24 software products · 12 literary works
 
 ---
 
-## 🗺 全景图
+**AI can write anything. But it can't decide what's worth writing. This distinction took three years to see clearly.**
+
+---
+
+## 🗺 Overview
 
 ```
-  产出速度
+  Output Speed
     ↑
     │     ┌──────────────────────────────────────────┐
-    │     │         蜜月期  · 1-3个月                  │
-    │     │  "AI什么都能写！"                           │
-    │     │  产出爆炸，质量不确定                        │
-    │     │  典型心态：兴奋→疲惫→隐约不安                │
+    │     │    Honeymoon  · Months 1–3               │
+    │     │  "AI can write anything!"                 │
+    │     │   Output explosion, uncertain quality      │
+    │     │   Typical mindset: excitement → fatigue →  │
+    │     │   vague unease                             │
     │     └────────────────┬─────────────────────────┘
-    │                      │ 第一次重大失败
+    │                      │ First major failure
     │                      ↓
     │     ┌──────────────────────────────────────────┐
-    │     │         幻觉期  · 3-12个月                 │
-    │     │  "为什么总是差那最后一点？"                  │
-    │     │  发现80%天花板，开始怀疑AI和自己             │
-    │     │  典型心态：挫败→归咎AI→归咎自己→迷茫         │
+    │     │    Illusion  · Months 3–12               │
+    │     │  "Why is it always that last bit?"        │
+    │     │   Discover the 80% ceiling, doubt AI       │
+    │     │   Typical mindset: frustration → blame →   │
+    │     │   confusion                                │
     │     └────────────────┬─────────────────────────┘
-    │                      │ 第一次主动接管控制流
+    │                      │ First deliberate boundary
     │                      ↓
     │     ┌──────────────────────────────────────────┐
-    │     │         边界期  · 12-24个月                │
-    │     │  "不是AI不行，是我放错了地方"                │
-    │     │  学会画线：什么给AI、什么必须自己做           │
-    │     │  典型心态：清醒→校准→重新加速                │
+    │     │    Boundaries  · Months 12–24            │
+    │     │  "Not that AI can't — I put it in the     │
+    │     │   wrong place"                             │
+    │     │   Learn to draw lines: what to give AI,    │
+    │     │   what to own yourself                     │
+    │     │   Typical: clarity → calibration →         │
+    │     │   re-acceleration                          │
     │     └────────────────┬─────────────────────────┘
-    │                      │ 第一次多Agent协作成功
+    │                      │ First multi-Agent success
     │                      ↓
     │     ┌──────────────────────────────────────────┐
-    │     │         协作期  · 24-36个月                │
-    │     │  "一种新的认知关系"                         │
-    │     │  人定方向+拆任务+审结果，AI填节点+堆量+找模式  │
-    │     │  典型心态：稳定→警惕→持续校准                │
+    │     │    Collaboration  · Months 24–36         │
+    │     │  "A new cognitive relationship"           │
+    │     │   Human: direction + decomposition +       │
+    │     │   review · AI: fill nodes + scale +        │
+    │     │   pattern detection                        │
+    │     │   Typical: stable → vigilant → continuous   │
+    │     │   calibration                              │
     │     └──────────────────────────────────────────┘
     │
-    └──────────────────────────────────────────────→ 认知深度
+    └──────────────────────────────────────────────→ Cognitive Depth
 ```
 
 ---
 
-## 🔄 你现在在哪？
+## 🔄 Where Are You?
 
-三个问题，帮你定位自己的阶段：
+Three questions to locate your stage:
 
-1. **你最近一次因为AI输出质量不够而决定重写，是什么时候？**
-   - 从没重写过 → 蜜月期
-   - 经常重写，但说不清为什么 → 幻觉期
-   - 重写之前就知道哪些部分要改 → 边界期
+1. **When was the last time you decided to rewrite AI output because the quality wasn't there?**
+   - Never had to rewrite → Honeymoon
+   - Rewrite often, but can't say exactly why → Illusion
+   - Know what needs rewriting before you start → Boundaries
 
-2. **你的AI工作流里，有没有一个"必须人来做"的检查点？**
-   - 没有，AI做完就算完了 → 蜜月期/幻觉期
-   - 有，但靠直觉，不靠规则 → 边界期初期
-   - 有明确的检查清单 → 边界期后期/协作期
+2. **Does your AI workflow have a checkpoint that "must be done by a human"?**
+   - No, AI does it all → Honeymoon / Illusion
+   - Yes, but based on intuition, not rules → Early Boundaries
+   - Yes, with a clear checklist → Late Boundaries / Collaboration
 
-3. **你用了几个AI Agent？它们之间有分工吗？**
-   - 一个Agent做所有事 → 蜜月期/幻觉期
-   - 多个Agent但分工模糊 → 边界期
-   - 多个Agent，各有明确职责，协同工作 → 协作期
+3. **How many AI Agents do you use? Do they have distinct roles?**
+   - One Agent does everything → Honeymoon / Illusion
+   - Multiple Agents with blurry roles → Boundaries
+   - Multiple Agents, each with clear responsibilities, collaborating → Collaboration
 
-> 你可能同时处于不同阶段——写作在协作期，写代码还在幻觉期。这不是线性进程，是能力地图。
-
----
-
-## 📖 四个阶段
-
-| 阶段 | 核心发现 | 最大陷阱 |
-|------|---------|---------|
-| [🍯 蜜月期](content/stage-01-honeymoon.md) | AI写得快≠你做得好 | 把速度当成能力 |
-| [🌫 幻觉期](content/stage-02-illusion.md) | 每个项目AI推到80%，最后20%是深渊 | 在这个阶段放弃 |
-| [⚔️ 边界期](content/stage-03-boundaries.md) | 不是AI不行，是你把它放错了位置 | 把边界当成永久的 |
-| [🤝 协作期](content/stage-04-collaboration.md) | AI不是工具也不是同事，是新的认知关系 | 以为到了就完成了 |
-
-每个阶段包含：
-- 🔴 三个你会遇到的典型困境
-- 🟢 三个关键突破（以及怎么做到）
-- ⚠️ 最大的陷阱（以及怎么避免）
+> You may be in different stages simultaneously — writing in Collaboration, coding in Illusion. This isn't a linear progression; it's a capability map.
 
 ---
 
-## 📊 数据来源
+## 📖 The Four Stages
 
-本仓库的所有发现基于以下真实数据：
+| Stage | Core Discovery | Biggest Trap |
+|-------|---------------|--------------|
+| [🍯 Honeymoon](content/stage-01-honeymoon.md) | AI writes fast ≠ you work well | Mistaking speed for competence |
+| [🌫 Illusion](content/stage-02-illusion.md) | Every project hits 80%, the last 20% is an abyss | Giving up at this stage |
+| [⚔️ Boundaries](content/stage-03-boundaries.md) | Not that AI can't — you put it in the wrong place | Treating boundaries as permanent |
+| [🤝 Collaboration](content/stage-04-collaboration.md) | AI is neither tool nor colleague — a new cognitive relationship | Thinking you've arrived |
 
-| 维度 | 数据 |
-|------|------|
-| 时间跨度 | 2023-2026，三年整 |
-| 产出总量 | 10000+ 篇 Markdown 文档，170MB+ |
-| 理论体系 | ASTO、OCGS、WSH（和悦论）、PFM（问题显影方法论）等 |
-| 软件产品 | 24 款，覆盖内容创作、理论建模、自动化发布、支付系统 |
-| 文学作品 | 12 部，含长篇小说、方法论著作、科幻算法系列 |
-| AI Agent 架构 | 多Agent协作（罗辑×王维×三IP内容Agent） |
-
-详见 [附录：数据与方法](content/appendix-data.md)。
-
----
-
-## 🤝 为什么做这个
-
-我在2023年开始和AI Agent深度协作。三年后，回头看10000多篇共同产出的文档，我发现最有价值的不是"AI帮我做了什么"，而是**我和AI的关系经历了四个清晰的阶段**——每个阶段都有典型的困境、突破和陷阱。
-
-这不是一份"AI使用指南"。这是一张地图。你走到哪，就能看到那个阶段的风景和暗礁。
-
-**如果你也在跟AI深度协作，也许你能在这张图上找到自己的位置。**
+Each stage includes:
+- 🔴 Three dilemmas you will face
+- 🟢 Three breakthroughs (and how to achieve them)
+- ⚠️ The biggest trap (and how to avoid it)
 
 ---
 
-## 📄 许可
+## 📊 Data Sources
 
-- 文字内容：[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
-- 代码示例：[Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+All findings are grounded in real data:
+
+| Dimension | Data |
+|-----------|------|
+| Time span | 2023–2026, three full years |
+| Total output | 10,000+ Markdown documents, 170MB+ |
+| Theoretical systems | ASTO, OCGS, WSH, PFM, etc. |
+| Software products | 24, spanning content creation, theory modeling, automated publishing, payments |
+| Literary works | 12, including novels, methodology works, sci-fi algorithm series |
+| AI Agent architecture | Multi-Agent collaboration (Luoji × Wang Wei × 3 IP Agents) |
+
+See [Appendix: Data & Methodology](content/appendix-data.md) and [Multi-Agent Architecture](content/appendix-multi-agent.md).
 
 ---
 
-## 🔗 相关资源
+## 🤝 Why This Exists
 
-- [12-Factor Agents](https://github.com/humanlayer/12-factor-agents) — 本仓库的结构灵感来源
-- [Building Effective Agents (Anthropic)](https://www.anthropic.com/engineering/building-effective-agents)
-- [The Outer Loop](https://theouterloop.substack.com/) — dexhorthy 的 newsletter
+I started deep collaboration with AI Agents in 2023. Three years later, looking back at 10,000+ co-produced documents, the most valuable insight isn't "what AI helped me do" — it's that the **relationship went through four distinct stages**, each with characteristic dilemmas, breakthroughs, and traps.
+
+This isn't an "AI usage guide." This is a **map**. Wherever you are, you can see the landscape and reefs for that stage.
+
+**If you're collaborating deeply with AI, perhaps you'll find yourself somewhere on this map.**
+
+---
+
+## 📄 License
+
+- Text content: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+- Code examples: [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+
+---
+
+> [中文版](README.中文.md) · [ai-collaboration-map on GitHub](https://github.com/DeepKit/ai-collaboration-map)

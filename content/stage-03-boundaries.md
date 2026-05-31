@@ -1,133 +1,133 @@
-# ⚔️ 阶段三：边界期
+# ⚔️ Stage 3: The Boundaries Period
 
-> **"不是AI不行。是我把AI放错了位置。画对线，两边都舒服。"**
+> **"It's not that AI can't do it. It's that I put AI in the wrong place. Draw the lines right, and both sides feel at ease."**
 
-**时间窗口：** 12-24个月
+**Time Window:** 12-24 months
 
-**一句话定义：** 你学会了划定人机边界——不是靠直觉，是靠规则。每条边界背后都有一个惨痛的失败。
-
----
-
-## 📊 数据
-
-- 从第13个月起，我们逐步建立了 **7条硬边界**
-- 违反边界的项目，返工率是遵守边界的 **3.2倍**
-- 最关键的边界：**控制流决策必须由人做，AI只做执行**
-- 边界不是一次性画完的——平均每条边界经过了 **2-3次重新谈判**
+**One-line definition:** You've learned to delineate the human-machine boundary — not by intuition, but by rules. Behind every boundary is a painful failure.
 
 ---
 
-## 七条硬边界
+## 📊 Data
 
-这些不是理论。每条背后都有至少一个月的痛苦调试。
-
-| # | 边界 | 含义 | 违反的后果 |
-|---|------|------|-----------|
-| 1 | **控制流归人** | 任务顺序、分支逻辑、终止条件——由确定性代码或人决定，不由AI决定 | AI会"走丢"——在一个任务里无限循环或跳到无关方向 |
-| 2 | **方向归人** | 一篇文章的核心论点、一个产品的核心价值主张——人定，AI展开 | 你会得到流畅但平庸的内容，没有尖锐的观点 |
-| 3 | **审查归人** | 任何AI产出的对外内容，必须经过人工通读。不是扫一眼，是逐字读 | 隐藏的错误和逻辑断裂会在最不该出现的时候出现 |
-| 4 | **决策归人** | 架构选型、定价策略、发布时机——AI提供分析，人做决定 | AI会给出"选择A，因为A看起来最安全"式的假决策 |
-| 5 | **认知主权归人** | 关键理论概念、核心叙事框架——人必须能用自己的话说清楚 | 你会失去对自己知识体系的掌控——看起来懂，实际上不懂 |
-| 6 | **状态归人** | Agent的执行状态（session存活、cookie有效、上次发到哪）——由人维护和检查 | Agent在不知情的状态下持续运行，产出大量无效工作 |
-| 7 | **失败归人** | Agent失败后——不是让它"再试一次"，是让人判断：重试、换策略、还是放弃 | Agent反复尝试同一错误，浪费token和时间 |
+- Starting from month 13, we gradually established **7 hard boundaries**
+- Projects that violated boundaries had a rework rate **3.2 times** that of projects that respected them
+- The most critical boundary: **control flow decisions must be made by humans; AI only executes**
+- Boundaries aren't drawn once and done — on average, each boundary went through **2-3 rounds of renegotiation**
 
 ---
 
-## 🔴 三个困境
+## The Seven Hard Boundaries
 
-### 困境一："我已经依赖AI了，不敢自己写"
+These are not theories. Behind each one is at least a month of painful debugging.
 
-这是认知上的戒断反应。当你习惯了AI的辅助速度，纯人工写作变得异常艰难——不是因为你的能力退化（虽然确实有退化），而是因为你习惯了"先看AI写什么再改"的流程。
-
-**我们的经历：** 在边界期初期，我们尝试了"纯人工日"——不用AI，自己写一天。第一天的产出量只有AI辅助的三分之一。但质量——观点深度、逻辑一致性、个人声音——远高于AI辅助。这个发现帮助我们建立了第一条边界。
-
-### 困境二："边界画太死，AI变得没用"
-
-在经历了幻觉期的痛苦后，你可能会过度补偿——给AI加太多约束。AI从"什么都做"变成"什么都做不了"。
-
-**我们的经历：** 有一段时间，我们要求AI产出的每个段落都要标注来源和推理链。这导致了"过度注释"——AI产出的内容充满了形式化的引用，但核心观点反而被淹没了。
-
-### 困境三："同一条边界在不同任务里不一样"
-
-写作的边界 ≠ 写代码的边界 ≠ 做架构决策的边界。
-
-一个具体的例子：在内容创作中，我们允许AI自由生成初稿（边界2放宽）；在代码生成中，我们要求AI只生成单元函数，不生成模块结构（边界2收紧）。同一原则，不同执行。
-
-**核心发现：** 边界不是开关（开/关），是滑块。不同任务需要不同的滑条位置。
+| # | Boundary | Meaning | Consequence of Violation |
+|---|----------|---------|--------------------------|
+| 1 | **Control flow belongs to humans** | Task ordering, branching logic, termination conditions — determined by deterministic code or humans, not AI | AI will "get lost" — looping infinitely within a task or jumping to an irrelevant direction |
+| 2 | **Direction belongs to humans** | An article's core argument, a product's core value proposition — set by humans, expanded by AI | You'll get fluent but mediocre content with no sharp perspective |
+| 3 | **Review belongs to humans** | Any AI-produced external-facing content must undergo human read-through. Not a glance, but word by word | Hidden errors and logical breaks will surface at the worst possible moment |
+| 4 | **Decisions belong to humans** | Architecture choices, pricing strategy, launch timing — AI provides analysis, humans make decisions | AI will offer fake decisions like "choose A because A looks safest" |
+| 5 | **Cognitive sovereignty belongs to humans** | Key theoretical concepts, core narrative frameworks — humans must be able to articulate them in their own words | You lose control of your own knowledge system — you appear to understand, but you actually don't |
+| 6 | **State belongs to humans** | Agent execution state (session liveness, cookie validity, last publishing point) — maintained and checked by humans | Agents run continuously in an unaware state, producing massive amounts of wasted work |
+| 7 | **Failure belongs to humans** | When an Agent fails — don't just tell it "try again"; have a human decide: retry, change strategy, or abandon | Agents repeatedly attempt the same error, wasting tokens and time |
 
 ---
 
-## 🟢 三个突破
+## 🔴 Three Predicaments
 
-### 突破一：建立"人定DAG，AI填节点"的工作模式
+### Predicament 1: "I've become dependent on AI and I'm afraid to write on my own"
 
-这是边界期最重要的工程实践。
+This is a cognitive withdrawal symptom. When you're accustomed to the speed of AI assistance, pure human writing becomes extraordinarily difficult — not because your ability has atrophied (though it has, somewhat), but because you've grown used to the workflow of "first see what AI writes, then edit."
 
-**DAG（有向无环图）** = 任务的顺序和分支逻辑，由人定义。
-**节点** = DAG中的每一步，由AI执行，人在节点之间检查。
+**Our experience:** Early in the Boundaries Period, we tried "pure human days" — no AI, write on your own for a full day. Day one's output was only a third of AI-assisted output. But the quality — depth of insight, logical consistency, personal voice — far exceeded AI-assisted work. This discovery helped us establish the first boundary.
 
-实例——我们的内容发布流程：
+### Predicament 2: "The boundaries are drawn too tightly, and AI becomes useless"
+
+After the pain of the Illusion Period, you might overcompensate — imposing too many constraints on AI. AI goes from "doing everything" to "doing nothing."
+
+**Our experience:** For a period, we required every paragraph AI produced to cite sources and reasoning chains. This led to "over-annotation" — AI output was filled with formal citations, but the core arguments were drowned out.
+
+### Predicament 3: "The same boundary works differently across different tasks"
+
+Writing boundaries ≠ coding boundaries ≠ architecture decision boundaries.
+
+A concrete example: in content creation, we allow AI to freely generate first drafts (Boundary 2 relaxed); in code generation, we require AI to generate only unit functions, not module structures (Boundary 2 tightened). Same principle, different execution.
+
+**Core insight:** Boundaries are not switches (on/off). They are sliders. Different tasks need different slider positions.
+
+---
+
+## 🟢 Three Breakthroughs
+
+### Breakthrough 1: Establish the "human defines the DAG, AI fills the nodes" working model
+
+This is the most important engineering practice of the Boundaries Period.
+
+**DAG (Directed Acyclic Graph)** = the sequence and branching logic of tasks, defined by humans.
+**Nodes** = each step in the DAG, executed by AI, with humans checking between nodes.
+
+Real example — our content publishing workflow:
 ```
-[人定] 今天发什么？→ 知乎问答付乙2篇 + 码力慧聚1篇 + 知天命1篇
+[Human decides] What to publish today? → Zhihu Q&A: Fu Yi × 2 + MaLiHuiJu × 1 + ZhiTianMing × 1
         ↓
-[AI做] 选题匹配：根据各IP人设，从选题库匹配4个问题
+[AI executes] Topic matching: match 4 questions from the topic pool based on each IP's persona
         ↓
-[人查] 选题确认：这四个问题今天的时机对吗？
+[Human checks] Topic confirmation: is the timing right for these four questions today?
         ↓
-[AI做] 撰写初稿：四个Agent各写各的
+[AI executes] Draft writing: four Agents each write their own piece
         ↓
-[人查] 通读审查：每篇逐字读
+[Human checks] Read-through review: read every piece word by word
         ↓
-[AI做] 格式化+排版
+[AI executes] Formatting + layout
         ↓
-[人做] 手动发布（不是技术限制，是刻意保留的审查点）
+[Human executes] Manual publishing (not a technical limitation — a deliberately preserved review checkpoint)
 ```
 
-**怎么做到的：** 把你当前最复杂的AI工作流画成一个流程图。在每个AI步骤后面，强制插入一个人工检查点。运行两周，记录哪些检查点确实发现了问题、哪些是形式化的。删掉形式化的，强化发现问题的。
+**How to get there:** Draw your current most complex AI workflow as a flowchart. After every AI step, forcibly insert a human check point. Run for two weeks, recording which checkpoints actually caught problems and which were just formalities. Delete the formal ones, reinforce the ones that found problems.
 
-### 突破二：发现"clarify模式"
+### Breakthrough 2: Discovering the "clarify mode"
 
-AI遇到不确定时，不应该猜——应该主动问人。
+When AI encounters uncertainty, it shouldn't guess — it should proactively ask the human.
 
-这是边界的最优雅实现。不是"AI不能做X"，而是"AI可以做X，但当X的边界模糊时，AI必须停下来问"。
+This is the most elegant implementation of boundaries. Not "AI cannot do X," but "AI can do X, but when X's boundaries are fuzzy, AI must stop and ask."
 
-**我们的clarify规则：**
-- 涉及金额的操作 → 必须clarify
-- 涉及用户隐私的操作 → 必须clarify
-- 涉及对外发布的内容 → 必须clarify
-- 连续两次工具调用失败 → 必须clarify
+**Our clarify rules:**
+- Operations involving monetary amounts → must clarify
+- Operations involving user privacy → must clarify
+- Content for external publication → must clarify
+- Two consecutive tool call failures → must clarify
 
-### 突破三：接受"边界需要不断重新谈判"
+### Breakthrough 3: Accepting that "boundaries need constant renegotiation"
 
-AI的能力在变（每个月都在变），你的能力也在变。六个月前画的边界，今天可能太松或太紧。
+AI's capabilities are changing (every single month), and your capabilities are changing too. A boundary drawn six months ago may be too loose or too tight today.
 
-我们养成了一个习惯：每个季度做一次"边界校准"——回看最近一个月的AI协作日志，找出：
-1. 哪条边界被突破后造成了问题？
-2. 哪条边界太紧了，限制了AI的有效使用？
-3. 有没有新的边界需要建立？
-
----
-
-## ⚠️ 最大陷阱
-
-> **把边界当成永久的。**
-
-边界是活的。它们是你和AI之间的**持续谈判**。
-
-当GPT-4出来、当Claude Sonnet出来、当你的能力也在变化——旧的边界会成为新的枷锁。
-
-**如何避免：** 每季度一次边界校准。不是看AI变强了没有——是看**你和AI的分工**还对不对。
+We developed a habit: quarterly "boundary calibration" — review the past month's AI collaboration log and identify:
+1. Which boundary was breached and caused a problem?
+2. Which boundary is too tight, limiting AI's effective use?
+3. Are there new boundaries that need to be established?
 
 ---
 
-## 🔗 进入下一阶段的信号
+## ⚠️ The Biggest Trap
 
-你不再花时间争论"AI能不能做X"。
+> **Treating boundaries as permanent.**
 
-你花时间设计"AI做X的检查机制"。
+Boundaries are alive. They are an **ongoing negotiation** between you and AI.
 
-当你的日常对话从"这个让AI试试"变成"这个让AI做，但我要在步骤3和步骤7各检查一次"——你就进入了协作期。
+When GPT-4 arrives, when Claude Sonnet arrives, when your own abilities evolve — old boundaries become new shackles.
+
+**How to avoid it:** Quarterly boundary calibration. Not checking whether AI has gotten stronger — checking whether **the division of labor between you and AI** is still correct.
 
 ---
 
-[← 上一阶段：幻觉期](stage-02-illusion.md) | [← 返回地图](../README.md) | [下一阶段：协作期 →](stage-04-collaboration.md)
+## 🔗 Signal That You're Entering the Next Stage
+
+You stop spending time arguing about "can AI do X?"
+
+You spend time designing "the verification mechanism for when AI does X."
+
+When your daily conversation shifts from "let's have AI try this" to "let AI do this, but I'll check at step 3 and step 7" — you've entered the Collaboration Period.
+
+---
+
+[← Previous Stage: The Illusion Period](stage-02-illusion.md) | [← Back to Map](../README.md) | [Next Stage: The Collaboration Period →](stage-04-collaboration.md)

@@ -1,65 +1,65 @@
-# 附录：数据与方法
+# Appendix: Data and Methodology
 
-## 数据来源
+## Data Sources
 
-本仓库所有发现基于以下真实数据：
+All findings in this repository are based on the following real data:
 
-### 产出总量
+### Total Output
 
-| 维度 | 数据 |
-|------|------|
-| 时间跨度 | 2023年Q2 — 2026年Q2，三年整 |
-| 总文档数 | 10000+ 篇 Markdown |
-| 总数据量 | 170MB+ 纯文本 |
-| AI辅助比例 | 约78%的文档有AI参与（撰写/审校/结构化） |
-| 纯人工比例 | 约22%的文档完全人工写作 |
+| Dimension | Data |
+|-----------|------|
+| Time span | Q2 2023 — Q2 2026, three full years |
+| Total documents | 10,000+ Markdown files |
+| Total data volume | 170MB+ plain text |
+| AI-assisted ratio | Approximately 78% of documents had AI involvement (writing/review/structuring) |
+| Purely human ratio | Approximately 22% of documents were entirely human-written |
 
-### 产出分布
+### Output Distribution
 
-| 类别 | 数量 | AI参与度 |
-|------|------|---------|
-| 理论文档（ASTO/OCGS/WSH/PFM等） | ~3000篇 | 高（初稿生成+结构组织） |
-| 软件工程文档（设计/API/部署/日志） | ~2500篇 | 中（API文档生成，设计文档人工主导） |
-| 文学作品（小说/方法论著作） | ~2000篇 | 中（AI辅助场景展开，人工控主线） |
-| 内容发布（知乎/公众号/小红书） | ~1500篇 | 高（AI生成+人工审查+改写） |
-| 产品/商业文档 | ~1000篇 | 中（AI提供分析框架，人工做决策） |
-| 协作函件（Syncthing函件） | ~300篇 | 低（人工编写，AI仅审校） |
-| 工作日志/会议记录 | ~700篇 | 低（人工记录） |
+| Category | Volume | AI Involvement |
+|----------|--------|----------------|
+| Theoretical documents (ASTO/OCGS/WSH/PFM, etc.) | ~3,000 | High (draft generation + structural organization) |
+| Software engineering documents (design/API/deployment/logs) | ~2,500 | Medium (API doc generation, human-led design docs) |
+| Literary works (novels/methodology books) | ~2,000 | Medium (AI-assisted scene expansion, human-controlled main thread) |
+| Content publishing (Zhihu/WeChat Official Accounts/Xiaohongshu) | ~1,500 | High (AI generation + human review + rewriting) |
+| Product/business documents | ~1,000 | Medium (AI provides analytical frameworks, human makes decisions) |
+| Collaboration letters (Syncthing correspondence) | ~300 | Low (human-written, AI proofreading only) |
+| Work logs/meeting notes | ~700 | Low (human-recorded) |
 
-### AI Agent架构
+### AI Agent Architecture
 
-| Agent | 角色 | 活跃时间 |
-|-------|------|---------|
-| 罗辑（Hermes Agent） | 前端开发+产品设计+战略分析 | 2023年至今 |
-| 王维（远程独立Agent） | 后端开发+运维+部署 | 2024年至今 |
-| 付乙（BrowserAct） | 知乎内容创作+发布 | 2025年至今 |
-| 码力慧聚（BrowserAct） | 知乎内容创作+发布 | 2025年至今 |
-| 知天命（BrowserAct） | 知乎内容创作+发布 | 2025年至今 |
-
----
-
-## 方法论
-
-### 阶段划分的依据
-
-四个阶段不是先验划分的。是回看三年的协作轨迹后，发现情绪、产出质量和人机关系都出现了三次明显的跃变：
-
-1. **蜜月→幻觉的跃变：** 第一次重大AI失败（AI生成的架构导致项目返工），情绪从兴奋转为怀疑
-2. **幻觉→边界的跃变：** 第一次主动画出"这个必须人做"的规则，产出质量开始回升
-3. **边界→协作的跃变：** 多Agent架构稳定运行3个月以上，不再需要每天调试
-
-### 数据的局限性
-
-1. **样本量：** 这是一个人（付毅）和一个AI基础设施（Hermes/BrowserAct/多Agent）的协作轨迹。不是100人的调查。
-2. **时间跨度：** 三年在AI领域是非常长的时间——但不同的人可能以不同的速度经历这些阶段。
-3. **领域特殊性：** 主要工作领域是理论构建+软件工程+内容创作。在纯工程领域（只写代码不写文章）或纯创意领域（只创作不构建体系），阶段可能不同。
-
-### 哪些结论可能不适用于你
-
-- 如果你只用AI做单一任务（比如只写代码或只翻译），你可能不会经历明显的阶段变化
-- 如果你的AI使用方式是"一次性对话"而非"持续协作"，80%问题可能不会那么突出
-- 如果你还没有开始多Agent协作，协作期的很多发现对你来说还是理论
+| Agent | Role | Active Period |
+|-------|------|---------------|
+| Luo Ji (Hermes Agent) | Frontend development + product design + strategic analysis | 2023–present |
+| Wang Wei (Remote Independent Agent) | Backend development + operations + deployment | 2024–present |
+| Fu Yi (BrowserAct) | Zhihu content creation + publishing | 2025–present |
+| MaLiHuiJu (BrowserAct) | Zhihu content creation + publishing | 2025–present |
+| ZhiTianMing (BrowserAct) | Zhihu content creation + publishing | 2025–present |
 
 ---
 
-[← 返回地图](../README.md)
+## Methodology
+
+### Basis for Stage Division
+
+The four stages were not divided a priori. They emerged from reviewing three years of collaboration trajectory, during which three distinct inflection points appeared in emotion, output quality, and human-machine relationships:
+
+1. **Honeymoon → Illusion inflection:** The first major AI failure (AI-generated architecture causing project rework), with emotions shifting from excitement to doubt
+2. **Illusion → Boundaries inflection:** The first time proactively drawing a rule of "this must be done by a human," with output quality beginning to recover
+3. **Boundaries → Collaboration inflection:** Multi-Agent architecture running stably for over 3 months, no longer requiring daily debugging
+
+### Limitations of the Data
+
+1. **Sample size:** This is the collaboration trajectory of one person (Fu Yi) and one AI infrastructure (Hermes/BrowserAct/multi-Agent). It is not a survey of 100 people.
+2. **Time span:** Three years is a very long time in the AI field — but different people may experience these stages at different speeds.
+3. **Domain specificity:** The primary work domains are theory building + software engineering + content creation. In pure engineering fields (only writing code, no writing articles) or pure creative fields (only creating, no building systems), the stages may differ.
+
+### Which Conclusions May Not Apply to You
+
+- If you only use AI for a single task (e.g., only writing code or only translating), you may not experience distinct stage transitions
+- If your AI usage pattern is "one-off conversations" rather than "continuous collaboration," the 80% Problem may not be as prominent
+- If you haven't started multi-Agent collaboration yet, many findings from the Collaboration Period remain theoretical for you
+
+---
+
+[← Back to Map](../README.md)
